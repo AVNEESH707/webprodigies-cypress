@@ -1,0 +1,6 @@
+-- Enums will be created in migration 0009
+-- This migration now just creates empty stubs
+-- CREATE TABLE IF NOT EXISTS "subscriptions" (
+-- Skipping subscriptions table creation - will be handled in 0009
+-- );
+--> statement-breakpoint
