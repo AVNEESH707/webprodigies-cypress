@@ -1,5 +1,6 @@
 import React from 'react';
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
+import { User } from '@supabase/supabase-js';
 
 import { cookies } from 'next/headers';
 import db from '@/lib/supabase/db';
@@ -50,7 +51,7 @@ const DashboardPage = async () => {
     }
 
     // Production mode: fetch user
-    let user = null;
+    let user: User | null = null;
     let userError = null;
     
     try {
