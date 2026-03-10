@@ -2,6 +2,7 @@ import { NextApiResponseServerIo } from '@/lib/types';
 import { Server as NetServer } from 'net';
 import { Server as ServerIO } from 'socket.io';
 import { NextApiRequest } from 'next';
+import { Server as HTTPServer } from 'http';
 
 export const config = {
   api: {
@@ -20,7 +21,7 @@ const ioHandler = (req: NextApiRequest, res: NextApiResponseServerIo) => {
   if (!serverAny.io) {
     console.log('Initializing Socket.IO');
     const path = '/api/socket/io';
-    const httpServer: NetServer = serverAny as any;
+    const httpServer: HTTPServer = serverAny as any;
 
     const io = new ServerIO(httpServer, {
       path,
