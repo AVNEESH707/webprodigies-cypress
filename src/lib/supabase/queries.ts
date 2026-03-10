@@ -50,7 +50,7 @@ export const getFolders = async (workspaceId: string) => {
     };
 
   try {
-    const results: Folder[] | [] = await withTimeout(
+    const results: Folder[] | null = await withTimeout(
       db
         .select()
         .from(folders)
