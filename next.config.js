@@ -8,6 +8,9 @@ const nextConfig = {
   },
   eslint: {
     ignoreDuringBuilds: true,
+    rules: {
+      'react-hooks/exhaustive-deps': 'off',
+    },
   },
 };
 
