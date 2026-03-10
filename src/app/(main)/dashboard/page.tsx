@@ -86,7 +86,7 @@ const DashboardPage = async () => {
     try {
       workspace = await Promise.race([
         db.query.workspaces.findFirst({
-          where: (workspace, { eq }) => eq(workspace.workspaceOwner, user.id),
+          where: (workspace, { eq }) => eq(workspace.workspaceOwner, user!.id),
         }),
         new Promise((_, reject) =>
           setTimeout(() => reject(new Error('Workspace fetch timeout')), 8000)
@@ -100,7 +100,7 @@ const DashboardPage = async () => {
     let subscription = null;
     try {
       const result = await Promise.race([
-        getUserSubscriptionStatus(user.id),
+        getUserSubscriptionStatus(user!.id),
         new Promise((_, reject) =>
           setTimeout(() => reject(new Error('Subscription fetch timeout')), 5000)
         ),
